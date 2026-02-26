@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#AWS S3
+#AWS EC2
+#AWS LAMBDA
+#AWS IAM
+#AWS Security-groups
+
+set -x
+set -e
+set -o
+
+#list s3 bucket
+echo "Print no of s3 buckets"
+aws s3 ls
+
+#list EC2 instances
+echo "prints EC2 innstances"
+aws ec2 describe-instances | grep InstanceId
+
+#lists aws lamba
+echo "print no of Lamba functions"
+aws lambda list-functions
+
+#list IAM users
+echo "print IAM users"
+aws iam list-users
+
+#list security groups
+aws ec2 describe-security-groups | grep GroupId
